@@ -175,9 +175,9 @@ if submit_button:
                     </style>
                 """, unsafe_allow_html=True)
 
-                st.markdown("<h2 style='text-align: center; color: #1e3a8a;'>🎯 IA Analysis Report</h2>", unsafe_allow_html=True)
+                st.markdown("<h2 style='text-align: center; color: #1e3a8a;'>Prediction results</h2>", unsafe_allow_html=True)
     
-                # 1. Barre de probabilités horizontale STYLISÉE (Dégradés)
+                # 
                 p_h, p_d, p_a = probs[0]*100, probs[1]*100, probs[2]*100
                 st.markdown(f"""
                     <div class="prob-bar-container">
@@ -187,7 +187,7 @@ if submit_button:
                     </div>
                 """, unsafe_allow_html=True)
 
-                # 2. Cartes de Score individuelles
+                # 
                 c1, c2, c3 = st.columns(3)
 
                 with c1:
@@ -218,7 +218,7 @@ if submit_button:
                         </div>
                     """, unsafe_allow_html=True)
             
-                # 3. Message de conclusion dynamique
+                #
                 st.markdown("<br>", unsafe_allow_html=True)
                 if p_h > p_a and p_h > p_d:
                     st.info(f"🏆 L'IA favorise une victoire à domicile pour **{home_team}**.")
@@ -227,32 +227,6 @@ if submit_button:
                 else:
                     st.info("⚖️ L'IA prévoit un match très équilibré (tendance Nul).")
             
-            with st.container(border=True):
-                #
-                #st.divider()
-                st.markdown("<h3 style='text-align: center;'>Prediction results</h3>", unsafe_allow_html=True)
-                p_h, p_d, p_a = probs[0]*100, probs[1]*100, probs[2]*100
-                
-                st.markdown(f"""
-                <div style="display: flex; width: 100%; height: 35px; border-radius: 10px; overflow: hidden; margin-bottom: 25px; border: 1px solid #ddd;">
-                    <div style="width: {p_h}%; background-color: #2e7d32; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 14px;">{p_h:.0f}%</div>
-                    <div style="width: {p_d}%; background-color: #757575; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 14px;">{p_d:.0f}%</div>
-                    <div style="width: {p_a}%; background-color: #d32f2f; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 14px;">{p_a:.0f}%</div>
-                </div>
-                """, unsafe_allow_html=True)
-                
-                res_h, res_n, res_a = st.columns(3)
-                
-                # Using Metrics for a professional dashboard look
-                res_h.metric(label=f"{home_team}", value=f"{probs[0]*100:.1f}%")
-                res_n.metric(label="Draw", value=f"{probs[1]*100:.1f}%")
-                res_a.metric(label=f"{away_team}", value=f"{probs[2]*100:.1f}%")
-    
-                # Confidence bar
-                highest_prob = max(probs)
-                st.write(f"**Model Confidence:**")
-                st.progress(float(highest_prob))
-                
                 st.success("Analysis completed successfully.")
         except Exception as e:
            st.error(F"An error occurred during prediction: {e}")
