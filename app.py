@@ -79,26 +79,32 @@ except:
 st.title("Ligue 1 Match Analyzer")
 st.markdown("Enter match details below to generate AI-powered probabilities.")
 
+col1, col2 = st.columns(2)
+teams = sorted(df_stats['Team'].unique())
+
+with col1:
+    home_team = st.selectbox("🏠 Home team", options=teams, key='h_team')
+    st.image(get_github_logo(home_team), width=100)
+    #odd_h = st.number_input(label = "Home win odds", value = 2.00, step=0.05, format="%.2f")
+  
+with col2:
+    away_team = st.selectbox("✈️ Away team", options=teams, key='a_team')
+    st.image(get_github_logo(away_team), width=100)
+    #odd_a = st.number_input(label = "Away win odds", value = 3.00, step=0.05, format="%.2f")
+
 # # INPUT FORM
 with st.form(key='match_form'):
     st.subheader("Match configuration")
-    col1, col2 = st.columns(2)
-    teams = sorted(df_stats['Team'].unique())
-  
-    with col1:
-        home_team = st.selectbox("🏠 Home team", options=teams, key='h_team')
-        st.image(get_github_logo(home_team), width=100)
-        st.write(get_github_logo(home_team))
-        odd_h = st.number_input(label = "Home win odds", value = 2.00, step=0.05, format="%.2f")
-      
-    with col2:
-        away_team = st.selectbox("✈️ Away team", options=teams, key='a_team')
-        st.image(get_github_logo(away_team), width=100)
-        st.write(get_github_logo(away_team))
-        odd_a = st.number_input(label = "Away win odds", value = 3.00, step=0.05, format="%.2f")
-
+    c1, c2, c3 = st.columns(3)
+    
+    with c1:
+        odd_h = st.number_input("Home odds", value=2.00, format="%.2f")
+    with c2:
+        odd_d = st.number_input("Draw odds", value=3.20, format="%.2f")
+    with c3:
+        odd_a = st.number_input("Away odds", value=3.00, format="%.2f")
     st.markdown(" ")
-    odd_d = st.number_input("Draw odds", value=3.20, step=0.05, format="%.2f")
+    #odd_d = st.number_input("Draw odds", value=3.20, step=0.05, format="%.2f")
 
     submit_button = st.form_submit_button(label='RUN PREDICTION', help="Click to predict!")
 
