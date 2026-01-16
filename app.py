@@ -86,7 +86,7 @@ except:
 # --- MAIN INTERFACE ---
 st.title("Ligue 1 Match Analyzer")
 st.subheader("Predict outcomes using advanced statistical modeling")
-st.markdown("<h3 style='text-align: center;'>Match Preview</h3>", unsafe_allow_html=True)
+st.markdown("---")
 
 col1, col_vs, col2 = st.columns([4, 2, 4])
 teams = sorted(df_stats['Team'].unique())
