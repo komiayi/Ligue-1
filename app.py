@@ -86,9 +86,6 @@ with st.form(key='match_form'):
   
     with col1:
         home_team = st.selectbox("🏠 Home team", options=teams, key='h_team')
-        logo_url_h = get_github_logo(home_team)
-        st.image(logo_url_h, width=80)
-        st.image(get_github_logo(home_team), width=80)
         odd_h = st.number_input(label = "Home win odds", value = 2.00, step=0.05, format="%.2f")
       
     with col2:
