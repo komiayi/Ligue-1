@@ -96,10 +96,10 @@ st.sidebar.title("Model Insights")
 st.sidebar.divider()
 st.sidebar.markdown("""
 This predictor uses a **Scikit-Learn** pipeline to analyze:
-* 🎯 **xG Metrics**
-* ⚡ **Conversion Rates**
-* 🏟️ **Team Form**
-* 📈 **Market Odds**
+* **xG Metrics**
+* **Conversion Rates**
+* **Team Form**
+* **Market Odds**
 """)
 
 # Display Last Update Date
