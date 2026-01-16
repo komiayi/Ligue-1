@@ -93,12 +93,11 @@ with col1:
     """, unsafe_allow_html=True)
 
 with col_vs:
-    # On ajoute des espaces vides pour descendre le "VS" au niveau des logos
     st.markdown("<br><br>", unsafe_allow_html=True)
     st.markdown("""
         <div style="text-align: center;">
-            <h1 style="color: #FF4B4B; font-size: 50px; margin-bottom: 0;">VS</h1>
-            <p style="font-size: 14px; color: gray;">Ligue 1</p>
+            <h1 style="color: #FF4B4B; font-size: 20px; margin-bottom: 0;">VS</h1>
+            <p style="font-size: 10px; color: gray;">Ligue 1</p>
         </div>
     """, unsafe_allow_html=True)
 
@@ -107,7 +106,7 @@ with col2:
     logo_away = get_github_logo(away_team)
     st.markdown(f"""
         <div style="text-align: center;">
-            <img src="{logo_away}" width="100">
+            <img src="{logo_away}" width="50">
             <p style="font-size: 20px; font-weight: bold; margin-top: 10px;">{away_team}</p>
         </div>
     """, unsafe_allow_html=True)
