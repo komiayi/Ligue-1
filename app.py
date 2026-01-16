@@ -246,7 +246,7 @@ if submit_button:
                     st.markdown(f"""
                         <div class="result-card">
                             <p style="color: #2e7d32; font-weight: bold; margin-bottom: 0;">HOME</p>
-                            <h2 style="margin: 0;color: var(--text-color, #1f0606);">{p_h:.1f}%</h2>
+                            <h2 style="margin: 0;color: var(--text-color, #010000);">{p_h:.1f}%</h2>
                             <p style="font-size: 0.9em; color: gray;">{home_team}</p>
                         </div>
                     """, unsafe_allow_html=True)
@@ -255,7 +255,7 @@ if submit_button:
                     st.markdown(f"""
                         <div class="result-card">
                             <p style="color: #616161; font-weight: bold; margin-bottom: 0;">DRAW</p>
-                            <h2 style="margin: 0;color: var(--text-color, #1f0606);">{p_d:.1f}%</h2>
+                            <h2 style="margin: 0;color: var(--text-color, #010000);">{p_d:.1f}%</h2>
                             <p style="font-size: 0.9em; color: gray;"></p>
                         </div>
                     """, unsafe_allow_html=True)
@@ -264,7 +264,7 @@ if submit_button:
                     st.markdown(f"""
                         <div class="result-card">
                             <p style="color: #c62828; font-weight: bold; margin-bottom: 0;">AWAY</p>
-                            <h2 style="margin: 0;color: var(--text-color, #1f0606);">{p_a:.1f}%</h2>
+                            <h2 style="margin: 0;color: var(--text-color, #010000);">{p_a:.1f}%</h2>
                             <p style="font-size: 0.9em; color: gray;">{away_team}</p>
                         </div>
                     """, unsafe_allow_html=True)
