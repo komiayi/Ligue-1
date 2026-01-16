@@ -91,17 +91,6 @@ if submit_button:
             with res_a:
                 st.markdown(f"Victoire {away_team}")
                 st.info(f"{probs[2]*100:.1f}%")
-
-
-        #st.success(f"Victoire {home_team}"  f"{probs[0]*100:.1f}%")
-        #st.success(f"{probs}" )
-        #st.success("Analyse terminée !")
-        #st.divider()
-
-        #res_h, res_n, res_a = st.columns(3)
-        #res_h.metric(label = f"Victoire {home_team}", value = f"{probs[0]*100:.1f}%")
-        #res_n.metric("Match Nul", f"{probs[1]*100:.1f}%")
-        #res_a.metric(f"Victoire {away_team}", f"{probs[2]*100:.1f}%")
     except ValueError:
         st.error("Vérifiez le format des cotes (utilisez un point pour les décimales, ex: 1.50)")
 
