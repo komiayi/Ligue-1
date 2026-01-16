@@ -110,6 +110,8 @@ with col2:
             <p style="font-size: 20px; font-weight: bold; margin-top: 10px;">{away_team}</p>
         </div>
     """, unsafe_allow_html=True)
+    
+st.markdown("---")
 
 # # INPUT FORM
 with st.form(key='match_form'):
