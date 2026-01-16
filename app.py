@@ -110,10 +110,17 @@ except:
     pass
 
 # --- MAIN INTERFACE ---
-st.title("Ligue 1 Match Analyzer")
-st.subheader("Season 2025-2026 | Statistical Prediction Model")
-st.subheader("Predict outcomes using advanced statistical modeling")
+st.title("Match Predictor")
+st.markdown("""
+    <p style='font-size: 1.1em; color: gray;'>
+    Statistical analysis & predictions based on my <b>Scikit-Learn</b> model.
+    <br>Season 2025-2026
+    </p>
+    """, 
+    unsafe_allow_html=True
+)
 st.markdown("---")
+st.divider()
 
 col1, col_vs, col2 = st.columns([4, 2, 4])
 mapping_clubs_2026 = [
