@@ -13,30 +13,31 @@ def get_github_logo(team_name):
     # Mapping CSV Team Names -> GitHub File Names
     # Update the left side to match your CSV exactly
     mapping = {
-        "Paris SG": "paris-saint-germain",
-        "Marseille": "olympique-marseille",
-        "Lyon": "olympique-lyonnais",
-        "Monaco": "as-monaco",
-        "Lille": "lille-osc",
-        "Lens": "rc-lens",
-        "Rennes": "stade-rennais",
-        "Nice": "ogc-nice",
-        "Reims": "stade-reims",
-        "Strasbourg": "rc-strasbourg",
-        "Montpellier": "montpellier-hsc",
-        "Toulouse": "toulouse-fc",
-        "Lorient": "fc-lorient",
-        "Nantes": "fc-nantes",
-        "Le Havre": "le-havre-ac",
-        "Brest": "stade-brestois-29",
-        "Clermont": "clermont-foot-63",
-        "Metz": "fc-metz",
-        "Auxerre": "AJ-Auxerre",
-        "Angers": "angers-sco",
-        "Saint-Etienne": "as-saint-etienne"
-    }
+    "Paris SG": "Paris Saint-Germain",
+    "Marseille": "Olympique Marseille",
+    "Lyon": "Olympique Lyon",
+    "Monaco": "AS Monaco",
+    "Lille": "LOSC Lille",
+    "Lens": "RC Lens",
+    "Rennes": "Stade Rennais FC",
+    "Nice": "OGC Nice",
+    "Reims": "Stade de Reims",
+    "Strasbourg": "RC Strasbourg Alsace",
+    "Montpellier": "Montpellier HSC",
+    "Toulouse": "Toulouse FC",
+    "Lorient": "FC Lorient",
+    "Nantes": "FC Nantes",
+    "Le Havre": "Le Havre AC",
+    "Brest": "Stade Brestois 29",
+    "Clermont": "Clermont Foot 63",
+    "Metz": "FC Metz",
+    "Auxerre": "AJ Auxerre",
+    "Angers": "Angers SCO",
+    "St Etienne": "AS Saint-Étienne",
+    "Paris FC": "Paris FC"
+}
     
-    file_name = mapping.get(team_name, team_name.lower().replace(" ", "-"))
+    file_name = mapping.get(team_name, team_name)
     return f"{base_url}{file_name}.png"
 
 # --- ASSETS LOADING ---
@@ -86,6 +87,7 @@ with st.form(key='match_form'):
   
     with col1:
         home_team = st.selectbox("🏠 Home team", options=teams, key='h_team')
+        st.image(get_github_logo(home_team), width=100)
         odd_h = st.number_input(label = "Home win odds", value = 2.00, step=0.05, format="%.2f")
       
     with col2:
