@@ -179,11 +179,12 @@ if submit_button:
     
                 # 
                 p_h, p_d, p_a = probs[0]*100, probs[1]*100, probs[2]*100
+                #{p_a:.0f}
                 st.markdown(f"""
                     <div class="prob-bar-container">
-                        <div style="width: {p_h}%; background: linear-gradient(90deg, #2e7d32, #4caf50); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">{p_h:.0f}%</div>
-                        <div style="width: {p_d}%; background: linear-gradient(90deg, #616161, #9e9e9e); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">{p_d:.0f}%</div>
-                        <div style="width: {p_a}%; background: linear-gradient(90deg, #c62828, #f44336); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">{p_a:.0f}%</div>
+                        <div style="width: {p_h}%; background: linear-gradient(90deg, #2e7d32, #4caf50); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);"></div>
+                        <div style="width: {p_d}%; background: linear-gradient(90deg, #616161, #9e9e9e); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);"></div>
+                        <div style="width: {p_a}%; background: linear-gradient(90deg, #c62828, #f44336); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">%</div>
                     </div>
                 """, unsafe_allow_html=True)
 
