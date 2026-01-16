@@ -14,35 +14,48 @@ st.set_page_config(
 def get_github_logo(team_name):
     """Fetches the raw image URL from luukhopman/foot-logos repository."""
     base_url = "https://raw.githubusercontent.com/luukhopman/football-logos/master/logos/France%20-%20Ligue%201/"
+
+    # URL d'un ballon de foot générique (ou logo L1) en cas d'absence
+    default_logo = "https://cdn-icons-png.flaticon.com/512/33/33736.png"
+    
     # Mapping CSV Team Names -> GitHub File Names
     # Update the left side to match your CSV exactly
     mapping = {
-    "Paris SG": "Paris Saint-Germain",
-    "Marseille": "Olympique Marseille",
-    "Lyon": "Olympique Lyon",
-    "Monaco": "AS Monaco",
-    "Lille": "LOSC Lille",
-    "Lens": "RC Lens",
-    "Rennes": "Stade Rennais FC",
-    "Nice": "OGC Nice",
-    "Reims": "Stade de Reims",
-    "Strasbourg": "RC Strasbourg Alsace",
-    "Montpellier": "Montpellier HSC",
-    "Toulouse": "Toulouse FC",
-    "Lorient": "FC Lorient",
-    "Nantes": "FC Nantes",
-    "Le Havre": "Le Havre AC",
-    "Brest": "Stade Brestois 29",
-    "Clermont": "Clermont Foot 63",
-    "Metz": "FC Metz",
-    "Auxerre": "AJ Auxerre",
-    "Angers": "Angers SCO",
-    "St Etienne": "AS Saint-Étienne",
-    "Paris FC": "Paris FC"
-}
-    file_name = mapping.get(team_name, team_name)
-    nom_fichier_url = file_name.replace(" ", "%20")
-    return f"{base_url}{nom_fichier_url}.png"
+        #
+        "Paris SG": "Paris Saint-Germain",
+        "Marseille": "Olympique Marseille",
+        "Lyon": "Olympique Lyon",
+        "Monaco": "AS Monaco",
+        "Lille": "LOSC Lille",
+        "Lens": "RC Lens",
+        "Rennes": "Stade Rennais FC",
+        "Nice": "OGC Nice",
+        "Reims": "Stade de Reims",
+        "Strasbourg": "RC Strasbourg Alsace",
+        "Montpellier": "Montpellier HSC",
+        "Toulouse": "Toulouse FC",
+        "Lorient": "FC Lorient",
+        "Nantes": "FC Nantes",
+        "Le Havre": "Le Havre AC",
+        "Brest": "Stade Brestois 29",
+        "Clermont": "Clermont Foot 63",
+        "Metz": "FC Metz",
+        "Auxerre": "AJ Auxerre",
+        "Angers": "Angers SCO",
+        "St Etienne": "AS Saint-Étienne",
+        "Paris FC": "Paris FC"
+    }
+
+    if team_name in mapping:
+        file_name = mapping[team_name]
+        nom_fichier_url = file_name.replace(" ", "%20")
+        return f"{base_url}{nom_fichier_url}.png"
+    else:
+        return default_logo
+        
+    #file_name = mapping.get(team_name, team_name)
+    #nom_fichier_url = file_name.replace(" ", "%20")
+    #return f"{base_url}{nom_fichier_url}.png"
 
 # --- ASSETS LOADING ---
 @st.cache_resource
@@ -63,9 +76,6 @@ def load_assets():
 with st.spinner("Loading statistical engine..."):
     model, df_stats = load_assets()
 
-# --- 4. SIDEBAR (More visual) ---
-# --- SIDEBAR LOGO (SVG) ---
-
 # --- SIDEBAR LOGO (Official WebP Version) ---
 l1_header_html = """
 <div style="
@@ -75,7 +85,7 @@ l1_header_html = """
     text-align: center; 
     border: 2px solid #FFFFFF;
     margin-bottom: 20px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 ">
     <img src="https://ligue1.com/images/Logo_Ligue1_large.webp" 
          width="130" 
