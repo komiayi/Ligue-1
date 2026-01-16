@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import joblib
 import os
+import datetime
 
 # --- PAGE CONFIGURATION ---
 st.set_page_config(page_title="Ligue 1 Match Predictor", layout="centered")
@@ -87,11 +88,13 @@ with st.form(key='match_form'):
     with col1:
         home_team = st.selectbox("🏠 Home team", options=teams, key='h_team')
         st.image(get_github_logo(home_team), width=100)
+        st.write(get_github_logo(home_team))
         odd_h = st.number_input(label = "Home win odds", value = 2.00, step=0.05, format="%.2f")
       
     with col2:
         away_team = st.selectbox("✈️ Away team", options=teams, key='a_team')
         st.image(get_github_logo(away_team), width=100)
+        st.write(get_github_logo(away_team))
         odd_a = st.number_input(label = "Away win odds", value = 3.00, step=0.05, format="%.2f")
 
     st.markdown(" ")
