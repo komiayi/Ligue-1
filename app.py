@@ -175,7 +175,7 @@ if submit_button:
                     </style>
                 """, unsafe_allow_html=True)
 
-                st.markdown("<h2 style='text-align: center; color: #1e3a8a;'>Prediction results</h2>", unsafe_allow_html=True)
+                st.markdown("<h2 style='text-align: center;'>Prediction results</h2>", unsafe_allow_html=True)
     
                 # 
                 p_h, p_d, p_a = probs[0]*100, probs[1]*100, probs[2]*100
@@ -205,7 +205,7 @@ if submit_button:
                         <div class="result-card">
                             <p style="color: #616161; font-weight: bold; margin-bottom: 0;">DRAW</p>
                             <h2 style="margin: 0;">{p_d:.1f}%</h2>
-                            <p style="font-size: 0.9em; color: gray;">Match Nul</p>
+                            <p style="font-size: 0.9em; color: gray;"></p>
                         </div>
                     """, unsafe_allow_html=True)
             
