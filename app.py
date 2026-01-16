@@ -124,9 +124,7 @@ with st.form(key='match_form'):
         odd_d = st.number_input("Draw odds", value=3.20, format="%.2f")
     with c3:
         odd_a = st.number_input("Away odds", value=3.00, format="%.2f")
-    st.markdown(" ")
-    #odd_d = st.number_input("Draw odds", value=3.20, step=0.05, format="%.2f")
-
+        
     submit_button = st.form_submit_button(label='RUN PREDICTION', help="Click to predict!")
 
 # PREDICTION LOGIC
