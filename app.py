@@ -6,7 +6,7 @@ import datetime
 
 # --- PAGE CONFIGURATION ---
 st.set_page_config(
-    page_title="Ligue 1 Match Predictor",
+    page_title="Ligue 1 Match predictor",
     layout="centered"
 )
 
@@ -91,7 +91,7 @@ l1_header_html = """
 
 st.sidebar.markdown(l1_header_html, unsafe_allow_html=True)
 
-st.sidebar.title("Model Insights")
+st.sidebar.title("Model insights")
 st.sidebar.divider()
 st.sidebar.markdown("""
 This predictor uses a **Scikit-Learn** pipeline to analyze:
@@ -110,7 +110,7 @@ except:
     pass
 
 # --- MAIN INTERFACE ---
-st.title("Match Predictor")
+st.title("Match predictor")
 st.markdown("""
     <p style='font-size: 1.1em; color: gray;'>
     Statistical analysis & predictions based <b>Scikit-Learn</b> model.
