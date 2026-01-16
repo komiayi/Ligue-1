@@ -221,11 +221,11 @@ if submit_button:
                 #
                 st.markdown("<br>", unsafe_allow_html=True)
                 if p_h > p_a and p_h > p_d:
-                    st.info(f"🏆 L'IA favorise une victoire à domicile pour **{home_team}**.")
+                    st.info(f"🎯 **Model Output:** Statistical edge for **{home_team}** at home.")
                 elif p_a > p_h and p_a > p_d:
-                    st.info(f"🚀 L'IA favorise une victoire à l'extérieur pour **{away_team}**.")
+                    st.info(f"🎯 **Model Output:** Statistical edge for **{away_team}** on the road.")
                 else:
-                    st.info("⚖️ L'IA prévoit un match très équilibré (tendance Nul).")
+                    st.info("⚖️ **Model Output:** High entropy detected. Match expected to be highly competitive (Draw tendency).")
             
                 st.success("Analysis completed successfully.")
         except Exception as e:
