@@ -5,10 +5,14 @@ import os
 import datetime
 
 # --- PAGE CONFIGURATION ---
-st.set_page_config(page_title="Ligue 1 Match Predictor", layout="centered")
+st.set_page_config(
+    page_title="Ligue 1 Match Predictor",
+    page_icon="⚽",
+    layout="centered"
+)
 # --- LOGO MAPPING FUNCTION ---
 def get_github_logo(team_name):
-    """Fetches the raw image URL from LuukS/foot-logos repository."""
+    """Fetches the raw image URL from luukhopman/foot-logos repository."""
     base_url = "https://raw.githubusercontent.com/luukhopman/football-logos/master/logos/France%20-%20Ligue%201/"
     # Mapping CSV Team Names -> GitHub File Names
     # Update the left side to match your CSV exactly
@@ -55,16 +59,20 @@ def load_assets():
   stats = pd.read_csv(stats_path)
   return model, stats
 
-model, df_stats = load_assets()
+# Loading assets with a professional touch
+with st.spinner("Loading statistical engine..."):
+    model, df_stats = load_assets()
 
-# --- SIDEBAR - PROJECT INFO ---
-st.sidebar.title("Model insights")
+# --- 4. SIDEBAR (More visual) ---
+st.sidebar.image("https://upload.wikimedia.org/wikipedia/commons/4/49/Ligue1_logo_2024.png", width=100) # Official L1 Logo
+st.sidebar.title("Model Insights")
+st.sidebar.divider()
 st.sidebar.markdown("""
-This model predicts French **Ligue 1** match outcomes based on:
-* Expected Goals (xG)
-* Conversion Rates
-* Historical Team Performance
-* Betting Odds (Market Sentiment)
+This predictor uses a **Scikit-Learn** pipeline to analyze:
+* 🎯 **xG Metrics**
+* ⚡ **Conversion Rates**
+* 🏟️ **Team Form**
+* 📈 **Market Odds**
 """)
 
 # Display Last Update Date
@@ -77,8 +85,9 @@ except:
 
 # --- MAIN INTERFACE ---
 st.title("Ligue 1 Match Analyzer")
-st.markdown("Enter match details below to generate AI-powered probabilities.")
+st.subheader("Predict outcomes using advanced statistical modeling")
 st.markdown("<h3 style='text-align: center;'>Match Preview</h3>", unsafe_allow_html=True)
+
 col1, col_vs, col2 = st.columns([4, 2, 4])
 teams = sorted(df_stats['Team'].unique())
 
