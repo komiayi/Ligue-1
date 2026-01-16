@@ -65,21 +65,30 @@ with st.spinner("Loading statistical engine..."):
 
 # --- 4. SIDEBAR (More visual) ---
 # --- SIDEBAR LOGO (SVG) ---
-l1_svg = """
-<center>
-    <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="100" height="100" rx="20" fill="#002D72"/>
-        <path d="M35 25V75H45V35H65V25H35Z" fill="#DAFF00"/>
-        <path d="M55 45V75H65V45H55Z" fill="#DAFF00"/>
+# --- SIDEBAR LOGO (Version SVG Pro & Stable) ---
+# Couleurs officielles : Bleu (#002D72) et Jaune Néon (#DAFF00)
+
+l1_header_html = """
+<div style="
+    background-color: #002D72; 
+    padding: 20px; 
+    border-radius: 15px; 
+    text-align: center; 
+    border: 2px solid #DAFF00;
+    margin-bottom: 20px;
+">
+    <svg width="60" height="60" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 8C0 3.58172 3.58172 0 8 0H32C36.4183 0 40 3.58172 40 8V32C40 36.4183 36.4183 40 32 40H8C3.58172 40 0 36.4183 0 32V8Z" fill="#002D72"/>
+        <path d="M12 10V30H28V26H16V10H12Z" fill="#DAFF00"/>
+        <path d="M22 14V30H26V14H22Z" fill="#DAFF00"/>
     </svg>
-    <h3 style="color: #DAFF00; font-family: sans-serif; margin-top: 10px; font-size: 1.2em;">Ligue 1</h3>
-    <p style="color: white; font-size: 0.7em; letter-spacing: 2px; margin-top: -15px;">McDONALD'S</p>
-</center>
+    <h2 style="color: #DAFF00; font-family: 'Arial Black', sans-serif; margin-top: 10px; margin-bottom: 0px; font-size: 1.4em;">LIGUE 1</h2>
+    <p style="color: #FFFFFF; font-family: Arial, sans-serif; font-size: 0.7em; letter-spacing: 3px; margin-top: 0px; font-weight: bold;">McDONALD'S</p>
+</div>
 """
-st.sidebar.markdown(l1_svg, unsafe_allow_html=True)
-st.sidebar.markdown("<br>", unsafe_allow_html=True)
-st.sidebar.image("https://upload.wikimedia.org/wikipedia/fr/thumb/f/fe/Logo_Ligue_1_McDonald%27s_2024.png/200px-Logo_Ligue_1_McDonald%27s_2024.png", width=100)
-#st.sidebar.image("https://upload.wikimedia.org/wikipedia/commons/4/49/Ligue1_logo_2024.png", width=100) # Official L1 Logo
+
+st.sidebar.markdown(l1_header_html, unsafe_allow_html=True)
+
 st.sidebar.title("Model Insights")
 st.sidebar.divider()
 st.sidebar.markdown("""
