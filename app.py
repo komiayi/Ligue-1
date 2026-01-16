@@ -64,7 +64,8 @@ with st.spinner("Loading statistical engine..."):
     model, df_stats = load_assets()
 
 # --- 4. SIDEBAR (More visual) ---
-st.sidebar.image("https://upload.wikimedia.org/wikipedia/commons/4/49/Ligue1_logo_2024.png", width=100) # Official L1 Logo
+st.sidebar.image("https://upload.wikimedia.org/wikipedia/fr/thumb/f/fe/Logo_Ligue_1_McDonald%27s_2024.png/200px-Logo_Ligue_1_McDonald%27s_2024.png", width=100)
+#st.sidebar.image("https://upload.wikimedia.org/wikipedia/commons/4/49/Ligue1_logo_2024.png", width=100) # Official L1 Logo
 st.sidebar.title("Model Insights")
 st.sidebar.divider()
 st.sidebar.markdown("""
