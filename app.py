@@ -111,6 +111,7 @@ except:
 
 # --- MAIN INTERFACE ---
 st.title("Ligue 1 Match Analyzer")
+st.subheader("Season 2025-2026 | Statistical Prediction Model")
 st.subheader("Predict outcomes using advanced statistical modeling")
 st.markdown("---")
 
