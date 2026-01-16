@@ -246,7 +246,7 @@ if submit_button:
                     st.markdown(f"""
                         <div class="result-card">
                             <p style="color: #2e7d32; font-weight: bold; margin-bottom: 0;">HOME</p>
-                            <h2 style="margin: 0;color: var(--text-color, #FFFFFF);">{p_h:.1f}%</h2>
+                            <h2 style="margin: 0;color: var(--text-color, #9c1919);">{p_h:.1f}%</h2>
                             <p style="font-size: 0.9em; color: gray;">{home_team}</p>
                         </div>
                     """, unsafe_allow_html=True)
