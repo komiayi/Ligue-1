@@ -151,9 +151,9 @@ if submit_button:
             probs = model.predict_proba(input_data)[0]
 
             # RESULTS DISPLAY
-            st.markdown("<h3 style='text-align: center;'>Prediction Results</h3>", unsafe_allow_html=True)
             st.divider()
-
+            st.markdown("<h3 style='text-align: center;'>Prediction Results</h3>", unsafe_allow_html=True)
+            
             res_h, res_n, res_a = st.columns(3)
             
             # Using Metrics for a professional dashboard look
