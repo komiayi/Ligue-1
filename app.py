@@ -30,19 +30,14 @@ def get_github_logo(team_name):
         "Lens": "RC Lens",
         "Rennes": "Stade Rennais FC",
         "Nice": "OGC Nice",
-        "Reims": "Stade de Reims",
         "Strasbourg": "RC Strasbourg Alsace",
-        "Montpellier": "Montpellier HSC",
-        "Toulouse": "Toulouse FC",
         "Lorient": "FC Lorient",
         "Nantes": "FC Nantes",
         "Le Havre": "Le Havre AC",
         "Brest": "Stade Brestois 29",
-        "Clermont": "Clermont Foot 63",
         "Metz": "FC Metz",
         "Auxerre": "AJ Auxerre",
         "Angers": "Angers SCO",
-        "St Etienne": "AS Saint-Étienne",
         "Paris FC": "Paris FC"
     }
 
