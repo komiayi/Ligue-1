@@ -97,7 +97,7 @@ with col_vs:
     st.markdown("""
         <div style="text-align: center;">
             <h1 style="color: #FF4B4B; font-size: 50px; margin-bottom: 0;">VS</h1>
-            <p style="font-size: 20px; color: gray;">Ligue 1</p>
+            <p style="font-size: 20px; color: gray;">Ligue 1 McDonald's</p>
         </div>
     """, unsafe_allow_html=True)
 
