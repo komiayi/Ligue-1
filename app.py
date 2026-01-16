@@ -87,7 +87,7 @@ with col1:
     logo_home = get_github_logo(home_team)
     st.markdown(f"""
         <div style="text-align: center;">
-            <img src="{logo_home}" width="100">
+            <img src="{logo_home}" width="50">
             <p style="font-size: 22px; font-weight: bold; margin-top: 10px;">{home_team}</p>
         </div>
     """, unsafe_allow_html=True)
