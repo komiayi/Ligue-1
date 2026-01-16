@@ -8,8 +8,7 @@ st.set_page_config(page_title="Ligue 1 Match Predictor", layout="centered")
 # --- LOGO MAPPING FUNCTION ---
 def get_github_logo(team_name):
     """Fetches the raw image URL from LuukS/foot-logos repository."""
-    base_url = "https://raw.githubusercontent.com/LuukS/foot-logos/main/logos/france_ligue_1/"
-    
+    base_url = "https://raw.githubusercontent.com/luukhopman/football-logos/master/logos/France%20-%20Ligue%201/"
     # Mapping CSV Team Names -> GitHub File Names
     # Update the left side to match your CSV exactly
     mapping = {
