@@ -66,6 +66,7 @@ with st.spinner("Loading statistical engine..."):
 # --- 4. SIDEBAR (More visual) ---
 # --- SIDEBAR LOGO (SVG) ---
 
+# --- SIDEBAR LOGO (Official WebP Version) ---
 l1_header_html = """
 <div style="
     background-color: #87CEEB; 
@@ -74,11 +75,18 @@ l1_header_html = """
     text-align: center; 
     border: 2px solid #FFFFFF;
     margin-bottom: 20px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 ">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Logo_Ligue_1_McDonald%27s_2024.svg" 
-         width="100" 
+    <img src="https://ligue1.com/images/Logo_Ligue1_large.webp" 
+         width="130" 
          style="margin-bottom: 10px;">
+    
+    <h2 style="color: #FFFFFF; font-family: 'Arial Black', sans-serif; margin: 0; font-size: 1.3em; line-height: 1.2;">
+        MATCH ANALYZER
+    </h2>
+    <p style="color: #FFFFFF; font-family: Arial, sans-serif; font-size: 0.7em; letter-spacing: 2px; margin-top: 5px; font-weight: bold; opacity: 0.9;">
+        STATISTICAL MODEL
+    </p>
 </div>
 """
 
