@@ -31,7 +31,7 @@ def get_github_logo(team_name):
         "Brest": "stade-brestois-29",
         "Clermont": "clermont-foot-63",
         "Metz": "fc-metz",
-        "Auxerre": "aj-auxerre",
+        "Auxerre": "AJ-Auxerre",
         "Angers": "angers-sco",
         "Saint-Etienne": "as-saint-etienne"
     }
