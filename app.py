@@ -79,8 +79,6 @@ l1_header_html = """
     <img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Logo_Ligue_1_McDonald%27s_2024.svg" 
          width="100" 
          style="margin-bottom: 10px;">
-    <h2 style="color: #FFFFFF; font-family: 'Arial Black', sans-serif; margin: 0; font-size: 1.4em;">LIGUE 1</h2>
-    <p style="color: #FFFFFF; font-family: Arial, sans-serif; font-size: 0.7em; letter-spacing: 2px; margin: 0; opacity: 0.9;">McDONALD'S</p>
 </div>
 """
 
