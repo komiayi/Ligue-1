@@ -88,16 +88,16 @@ with col1:
     st.markdown(f"""
         <div style="text-align: center;">
             <img src="{logo_home}" width="50">
-            <p style="font-size: 22px; font-weight: bold; margin-top: 10px;">{home_team}</p>
+            <p style="font-size: 20px; font-weight: bold; margin-top: 10px;">{home_team}</p>
         </div>
     """, unsafe_allow_html=True)
 
 with col_vs:
-    st.markdown("<br><br>", unsafe_allow_html=True)
+    st.markdown("<br>", unsafe_allow_html=True)
     st.markdown("""
-        <div style="text-align: center;">
-            <h1 style="color: #FF4B4B; font-size: 50px; margin-bottom: 0;">VS</h1>
-            <p style="font-size: 20px; color: gray;">Ligue 1 McDonald's</p>
+        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%;">
+            <h1 style="color: #FF4B4B; font-size: 45px; margin: 0; line-height: 1;">VS</h1>
+            <p style="font-size: 12px; color: gray; margin: 0; white-space: nowrap;">Ligue 1 McDonald's</p>
         </div>
     """, unsafe_allow_html=True)
 
