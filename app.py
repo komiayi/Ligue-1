@@ -242,19 +242,12 @@ if submit_button:
                 c1, c2, c3 = st.columns(3)
 
                 with c1:
+                    #
                     st.markdown(f"""
-                        <div style="
-                            background-color: rgba(135, 206, 235, 0.1); 
-                            padding: 15px; 
-                            border-radius: 10px; 
-                            border-left: 5px solid #4CAF50;
-                            text-align: center;
-                        ">
-                            <p style="color: #4CAF50; font-weight: bold; margin-bottom: 0; font-size: 0.9em; letter-spacing: 1px;">HOME</p>
-                            
-                            <h2 style="margin: 0; color: var(--text-color, #FFFFFF); font-size: 2em;">{p_h:.1f}%</h2>
-                            
-                            <p style="font-size: 0.85em; color: #888888; margin-top: 5px; line-height: 1.2;">{home_team}</p>
+                        <div class="result-card">
+                            <p style="color: #2e7d32; font-weight: bold; margin-bottom: 0;">HOME</p>
+                            <h2 style="margin: 0;color: var(--text-color, #FFFFFF);">{p_h:.1f}%</h2>
+                            <p style="font-size: 0.9em; color: gray;">{home_team}</p>
                         </div>
                     """, unsafe_allow_html=True)
 
