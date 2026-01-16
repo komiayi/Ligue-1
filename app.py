@@ -114,19 +114,18 @@ with col2:
 #st.markdown("---")
 
 # --- INPUT FORM ---
-with st.form(key='match_form'):
-    #st.subheader("Match configuration")
+with st.container(border=True):
     st.markdown("<h3 style='text-align: center;'>Match configuration</h3>", unsafe_allow_html=True)
-    c1, c2, c3 = st.columns(3)
-    
-    with c1:
-        odd_h = st.number_input("Home odds", value=2.00, format="%.2f")
-    with c2:
-        odd_d = st.number_input("Draw odds", value=3.20, format="%.2f")
-    with c3:
-        odd_a = st.number_input("Away odds", value=3.00, format="%.2f")
-        
-    submit_button = st.form_submit_button(label='RUN PREDICTION', help="Click to predict!")
+    with st.form(key='match_form'):
+        c1, c2, c3 = st.columns(3)
+        with c1:
+            odd_h = st.number_input("Home odds", value=2.00, format="%.2f")
+        with c2:
+            odd_d = st.number_input("Draw odds", value=3.20, format="%.2f")
+        with c3:
+            odd_a = st.number_input("Away odds", value=3.00, format="%.2f")
+            
+        submit_button = st.form_submit_button(label='RUN PREDICTION', help="Click to predict!")
 
 # PREDICTION LOGIC
 if submit_button:
@@ -152,23 +151,34 @@ if submit_button:
             probs = model.predict_proba(input_data)[0]
 
             # RESULTS DISPLAY
-            #st.divider()
-            st.markdown("<h3 style='text-align: center;'>Prediction results</h3>", unsafe_allow_html=True)
-            
-            res_h, res_n, res_a = st.columns(3)
-            
-            # Using Metrics for a professional dashboard look
-            res_h.metric(label=f"{home_team}", value=f"{probs[0]*100:.1f}%")
-            res_n.metric(label="Draw", value=f"{probs[1]*100:.1f}%")
-            res_a.metric(label=f"{away_team}", value=f"{probs[2]*100:.1f}%")
-
-            # Confidence bar
-            highest_prob = max(probs)
-            st.write(f"**Model Confidence:**")
-            st.progress(float(highest_prob))
-            
-            st.success("Analysis completed successfully.")
-        except ValueError:
+            with st.container(border=True):
+                #
+                #st.divider()
+                st.markdown("<h3 style='text-align: center;'>Prediction results</h3>", unsafe_allow_html=True)
+                p_h, p_d, p_a = probs[0]*100, probs[1]*100, probs[2]*100
+                
+                st.markdown(f"""
+                <div style="display: flex; width: 100%; height: 35px; border-radius: 10px; overflow: hidden; margin-bottom: 25px; border: 1px solid #ddd;">
+                    <div style="width: {p_h}%; background-color: #2e7d32; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 14px;">{p_h:.0f}%</div>
+                    <div style="width: {p_d}%; background-color: #757575; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 14px;">{p_d:.0f}%</div>
+                    <div style="width: {p_a}%; background-color: #d32f2f; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 14px;">{p_a:.0f}%</div>
+                </div>
+                """, unsafe_allow_html=True)
+                
+                res_h, res_n, res_a = st.columns(3)
+                
+                # Using Metrics for a professional dashboard look
+                res_h.metric(label=f"{home_team}", value=f"{probs[0]*100:.1f}%")
+                res_n.metric(label="Draw", value=f"{probs[1]*100:.1f}%")
+                res_a.metric(label=f"{away_team}", value=f"{probs[2]*100:.1f}%")
+    
+                # Confidence bar
+                highest_prob = max(probs)
+                st.write(f"**Model Confidence:**")
+                st.progress(float(highest_prob))
+                
+                st.success("Analysis completed successfully.")
+        except Exception as e:
            st.error(F"An error occurred during prediction: {e}")
 
 # FOOTER
