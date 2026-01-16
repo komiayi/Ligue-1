@@ -7,7 +7,6 @@ import datetime
 # --- PAGE CONFIGURATION ---
 st.set_page_config(
     page_title="Ligue 1 Match Predictor",
-    page_icon="⚽",
     layout="centered"
 )
 
@@ -272,11 +271,11 @@ if submit_button:
                 #
                 st.markdown("<br>", unsafe_allow_html=True)
                 if p_h > p_a and p_h > p_d:
-                    st.info(f"🎯 **Model Output:** Statistical edge for **{home_team}** at home.")
+                    st.info(f"**Model Output:** Statistical edge for **{home_team}** at home.")
                 elif p_a > p_h and p_a > p_d:
-                    st.info(f"🎯 **Model Output:** Statistical edge for **{away_team}** on the road.")
+                    st.info(f"**Model Output:** Statistical edge for **{away_team}** on the road.")
                 else:
-                    st.info("⚖️ **Model Output:** High entropy detected. Match expected to be highly competitive (Draw tendency).")
+                    st.info("**Model Output:** High entropy detected. Match expected to be highly competitive (Draw tendency).")
             
                 st.success("Analysis completed successfully.")
         except Exception as e:
