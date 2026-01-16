@@ -166,7 +166,7 @@ if submit_button:
                         .prob-bar-container {
                             display: flex;
                             width: 100%;
-                            height: 40px;
+                            height: 20px;
                             border-radius: 10px;
                             overflow: hidden;
                             box-shadow: inset 0 2px 5px rgba(0,0,0,0.2);
