@@ -52,15 +52,15 @@ with st.form(key='mon_formulaire1'):
     teams = sorted(df_stats['Team'].unique())
   
     with col1:
-        home_team = st.selectbox("Équipe domicile", options=teams, key='h_team')
-        odd_h = st.number_input(label = "Cote victoire domicile", value = 2.00, step=0.05, format="%.2f")
+        home_team = st.selectbox("🏠 Home team", options=teams, key='h_team')
+        odd_h = st.number_input(label = "Home win odds", value = 2.00, step=0.05, format="%.2f")
       
     with col2:
-        away_team = st.selectbox("Équipe extérieur", options=teams, key='a_team')
-        odd_a = st.number_input(label = "Cote victoire extérieur", value = 3.00, step=0.05, format="%.2f")
+        away_team = st.selectbox("✈️ Away team", options=teams, key='a_team')
+        odd_a = st.number_input(label = "Away win odds", value = 3.00, step=0.05, format="%.2f")
 
     st.markdown(" ")
-    odd_d = st.number_input("Cote match nul", value=3.20, step=0.05, format="%.2f")
+    odd_d = st.number_input("Draw odds", value=3.20, step=0.05, format="%.2f")
 
     submit_button = st.form_submit_button(label='RUN PREDICTION', help="Click to predict!")
 
