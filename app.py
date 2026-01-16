@@ -38,7 +38,8 @@ def get_github_logo(team_name):
         "Metz": "FC Metz",
         "Auxerre": "AJ Auxerre",
         "Angers": "Angers SCO",
-        "Paris FC": "Paris FC"
+        "Paris FC": "Paris FC",
+        "Toulouse": "FC Toulouse"
     }
 
     if team_name in mapping:
@@ -114,7 +115,14 @@ st.subheader("Predict outcomes using advanced statistical modeling")
 st.markdown("---")
 
 col1, col_vs, col2 = st.columns([4, 2, 4])
-teams = sorted(df_stats['Team'].unique())
+mapping_clubs_2026 = [
+    "Paris SG", "Marseille", "Lyon", "Monaco", "Lille", "Lens", 
+    "Rennes", "Nice", "Strasbourg", "Toulouse", 
+    "Lorient", "Nantes", "Le Havre", "Brest", "Auxerre", "Angers", "Paris FC", "Metz"
+]
+
+# Filtrer les équipes pour n'afficher que les 18 de la saison 2025-2026
+teams = sorted([t for t in df_stats['Team'].unique() if t in mapping_clubs_2026])
 
 with col1:
     home_team = st.selectbox("Select Home Team", options=teams, key='h_team', label_visibility="collapsed")
