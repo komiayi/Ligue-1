@@ -83,7 +83,7 @@ col1, col2 = st.columns(2)
 teams = sorted(df_stats['Team'].unique())
 
 with col1:
-    home_team = st.selectbox("🏠 Home team", options=teams, key='h_team', label_visibility="collapsed")
+    home_team = st.selectbox("Select Home Team", options=teams, key='h_team', label_visibility="collapsed")
     logo_home = get_github_logo(home_team)
     st.markdown(f"""
         <div style="text-align: center;">
@@ -93,7 +93,7 @@ with col1:
     """, unsafe_allow_html=True)
     
 with col2:
-    away_team = st.selectbox("✈️ Away team", options=teams, key='a_team')
+    away_team = st.selectbox("Select Away Team", options=teams, key='a_team', label_visibility="collapsed")
     logo_away = get_github_logo(away_team)
     st.markdown(f"""
         <div style="text-align: center;">
