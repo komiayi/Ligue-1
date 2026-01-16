@@ -135,9 +135,9 @@ if not df_test.empty:
     y_pred = model_pipeline.predict(df_test[features])
     print(f"Accuracy sur la dernière journée : {accuracy_score(df_test['FTR_num'], y_pred):.4f}")
 
-# ==========================================
-# 5. SAUVEGARDE POUR STREAMLIT
-# ==========================================
+# =======================
+# 5. SAUVEGARDE
+# =======================
 
 # 1. Le Modèle
 joblib.dump(model_pipeline, 'football_model.pkl')
@@ -150,6 +150,6 @@ latest_stats = latest_stats[['Team', 'HST_mean_h', 'conv_mean_h', 'HST_allowed_m
                              'AST_mean_a', 'conv_mean_a', 'AST_allowed_mean_a', 'conv_allowed_mean_a', 'HC_mean_h', 'AC_mean_a']]
 latest_stats.to_csv('latest_team_stats.csv', index=False)
 
-print("\n PRÉPARATION TERMINÉE")
-print("- Modèle sauvegardé : 'football_model.pkl'")
-print("- Stats récentes sauvegardées : 'latest_team_stats.csv'")
+#print("\n PRÉPARATION TERMINÉE")
+#print("- Modèle sauvegardé : 'football_model.pkl'")
+#print("- Stats récentes sauvegardées : 'latest_team_stats.csv'")
