@@ -78,8 +78,8 @@ except:
 # --- MAIN INTERFACE ---
 st.title("Ligue 1 Match Analyzer")
 st.markdown("Enter match details below to generate AI-powered probabilities.")
-
-col1, col2 = st.columns(2)
+st.markdown("<h3 style='text-align: center;'>Match Preview</h3>", unsafe_allow_html=True)
+col1, col_vs, col2 = st.columns([4, 2, 4])
 teams = sorted(df_stats['Team'].unique())
 
 with col1:
@@ -88,10 +88,20 @@ with col1:
     st.markdown(f"""
         <div style="text-align: center;">
             <img src="{logo_home}" width="100">
-            <p style="font-size: 20px; font-weight: bold; margin-top: 10px;">{home_team}</p>
+            <p style="font-size: 22px; font-weight: bold; margin-top: 10px;">{home_team}</p>
         </div>
     """, unsafe_allow_html=True)
-    
+
+with col_vs:
+    # On ajoute des espaces vides pour descendre le "VS" au niveau des logos
+    st.markdown("<br><br>", unsafe_allow_html=True)
+    st.markdown("""
+        <div style="text-align: center;">
+            <h1 style="color: #FF4B4B; font-size: 50px; margin-bottom: 0;">VS</h1>
+            <p style="font-size: 14px; color: gray;">Ligue 1</p>
+        </div>
+    """, unsafe_allow_html=True)
+
 with col2:
     away_team = st.selectbox("Select Away Team", options=teams, key='a_team', label_visibility="collapsed")
     logo_away = get_github_logo(away_team)
