@@ -153,6 +153,82 @@ if submit_button:
             # RESULTS DISPLAY
             with st.container(border=True):
                 #
+                st.markdown("""
+                    <style>
+                        .result-card {
+                            background-color: #f8f9fa;
+                            border-radius: 15px;
+                            padding: 20px;
+                            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+                            text-align: center;
+                            border: 1px solid #e0e0e0;
+                        }
+                        .prob-bar-container {
+                            display: flex;
+                            width: 100%;
+                            height: 40px;
+                            border-radius: 20px;
+                            overflow: hidden;
+                            box-shadow: inset 0 2px 5px rgba(0,0,0,0.2);
+                            margin: 20px 0;
+                        }
+                    </style>
+                """, unsafe_allow_html=True)
+
+                st.markdown("<h2 style='text-align: center; color: #1e3a8a;'>🎯 IA Analysis Report</h2>", unsafe_allow_html=True)
+    
+                # 1. Barre de probabilités horizontale STYLISÉE (Dégradés)
+                p_h, p_d, p_a = probs[0]*100, probs[1]*100, probs[2]*100
+                st.markdown(f"""
+                    <div class="prob-bar-container">
+                        <div style="width: {p_h}%; background: linear-gradient(90deg, #2e7d32, #4caf50); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">{p_h:.0f}%</div>
+                        <div style="width: {p_d}%; background: linear-gradient(90deg, #616161, #9e9e9e); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">{p_d:.0f}%</div>
+                        <div style="width: {p_a}%; background: linear-gradient(90deg, #c62828, #f44336); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">{p_a:.0f}%</div>
+                    </div>
+                """, unsafe_allow_html=True)
+
+                # 2. Cartes de Score individuelles
+                c1, c2, c3 = st.columns(3)
+
+                with c1:
+                    #
+                    st.markdown(f"""
+                        <div class="result-card">
+                            <p style="color: #2e7d32; font-weight: bold; margin-bottom: 0;">HOME</p>
+                            <h2 style="margin: 0;">{p_h:.1f}%</h2>
+                            <p style="font-size: 0.9em; color: gray;">{home_team}</p>
+                        </div>
+                    """, unsafe_allow_html=True)
+
+                with c2:
+                    st.markdown(f"""
+                        <div class="result-card">
+                            <p style="color: #616161; font-weight: bold; margin-bottom: 0;">DRAW</p>
+                            <h2 style="margin: 0;">{p_d:.1f}%</h2>
+                            <p style="font-size: 0.9em; color: gray;">Match Nul</p>
+                        </div>
+                    """, unsafe_allow_html=True)
+            
+                with c3:
+                    st.markdown(f"""
+                        <div class="result-card">
+                            <p style="color: #c62828; font-weight: bold; margin-bottom: 0;">AWAY</p>
+                            <h2 style="margin: 0;">{p_a:.1f}%</h2>
+                            <p style="font-size: 0.9em; color: gray;">{away_team}</p>
+                        </div>
+                    """, unsafe_allow_html=True)
+            
+                # 3. Message de conclusion dynamique
+                st.markdown("<br>", unsafe_allow_html=True)
+                if p_h > p_a and p_h > p_d:
+                    st.info(f"🏆 L'IA favorise une victoire à domicile pour **{home_team}**.")
+                elif p_a > p_h and p_a > p_d:
+                    st.info(f"🚀 L'IA favorise une victoire à l'extérieur pour **{away_team}**.")
+                else:
+                    st.info("⚖️ L'IA prévoit un match très équilibré (tendance Nul).")
+            
+            with st.container(border=True):
+                #
                 #st.divider()
                 st.markdown("<h3 style='text-align: center;'>Prediction results</h3>", unsafe_allow_html=True)
                 p_h, p_d, p_a = probs[0]*100, probs[1]*100, probs[2]*100
