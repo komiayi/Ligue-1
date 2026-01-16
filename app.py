@@ -236,30 +236,23 @@ if submit_button:
 st.markdown("<br><br>", unsafe_allow_html=True)
 st.divider()
 
-# Création de colonnes pour un footer plus riche
-foot_col1, foot_col2, foot_col3 = st.columns([2, 2, 2])
+# Deux colonnes simples : Tech & Data
+foot_col1, foot_col2 = st.columns(2)
 
 with foot_col1:
-    st.markdown("### 🛠️ Tech Stack")
-    st.caption("Built with **Streamlit**")
-    st.caption("Modeled with **Scikit-Learn**")
-    st.caption("Data via **Pandas**")
+    st.markdown("##### 🛠️ Technology")
+    st.caption("Developed with **Python** & **Scikit-Learn**")
+    st.caption("Interface by **Streamlit**")
 
 with foot_col2:
-    st.markdown("### 📈 Methodology")
-    st.caption("Poisson Distribution Analysis")
-    st.caption("xG & Conversion Rate Weighting")
-    st.caption("Market Sentiment Integration")
+    st.markdown("##### 📅 Data Status")
+    st.caption("Sources: Official Ligue 1 Statistics")
+    st.caption("Last Update: Weekly Sync")
 
-with foot_col3:
-    st.markdown("### 🕒 Updates")
-    st.caption("Data: Weekly Sync")
-    st.caption(f"Status: Operational")
-    st.caption("© 2024 | Match Predictor")
-
+# Disclaimer discret et centré
 st.markdown(
-    "<p style='text-align: center; color: gray; font-size: 0.8em;'>"
-    "This tool is for statistical information only. Prediction is based on historical data. Betting involves risk."
+    "<p style='text-align: center; color: gray; font-size: 0.75em; margin-top: 30px;'>"
+    "For statistical purposes only. Past performance does not guarantee future results."
     "</p>", 
     unsafe_allow_html=True
 )
