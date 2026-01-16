@@ -38,8 +38,7 @@ def get_github_logo(team_name):
 }
     file_name = mapping.get(team_name, team_name)
     nom_fichier_url = file_name.replace(" ", "%20")
-    url_finale = f"{base_url}{nom_fichier_url}.png"
-    return f"{base_url}{file_name}.png"
+    return f"{base_url}{nom_fichier_url}.png"
 
 # --- ASSETS LOADING ---
 @st.cache_resource
@@ -93,6 +92,7 @@ with st.form(key='match_form'):
       
     with col2:
         away_team = st.selectbox("✈️ Away team", options=teams, key='a_team')
+        st.image(get_github_logo(away_team), width=100)
         odd_a = st.number_input(label = "Away win odds", value = 3.00, step=0.05, format="%.2f")
 
     st.markdown(" ")
