@@ -232,6 +232,34 @@ if submit_button:
         except Exception as e:
            st.error(F"An error occurred during prediction: {e}")
 
-# FOOTER
-st.markdown("---")
-st.caption("Powered by Scikit-Learn | Data updated weekly from official sources.")
+# --- FOOTER ---
+st.markdown("<br><br>", unsafe_allow_html=True)
+st.divider()
+
+# Création de colonnes pour un footer plus riche
+foot_col1, foot_col2, foot_col3 = st.columns([2, 2, 2])
+
+with foot_col1:
+    st.markdown("### 🛠️ Tech Stack")
+    st.caption("Built with **Streamlit**")
+    st.caption("Modeled with **Scikit-Learn**")
+    st.caption("Data via **Pandas**")
+
+with foot_col2:
+    st.markdown("### 📈 Methodology")
+    st.caption("Poisson Distribution Analysis")
+    st.caption("xG & Conversion Rate Weighting")
+    st.caption("Market Sentiment Integration")
+
+with foot_col3:
+    st.markdown("### 🕒 Updates")
+    st.caption("Data: Weekly Sync")
+    st.caption(f"Status: Operational")
+    st.caption("© 2024 | Match Predictor")
+
+st.markdown(
+    "<p style='text-align: center; color: gray; font-size: 0.8em;'>"
+    "This tool is for statistical information only. Prediction is based on historical data. Betting involves risk."
+    "</p>", 
+    unsafe_allow_html=True
+)
