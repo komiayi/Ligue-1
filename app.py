@@ -75,7 +75,7 @@ l1_header_html = """
     text-align: center; 
     border: 2px solid #FFFFFF;
     margin-bottom: 20px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 ">
     <img src="https://ligue1.com/images/Logo_Ligue1_large.webp" 
          width="130" 
