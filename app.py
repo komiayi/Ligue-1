@@ -67,7 +67,7 @@ with st.spinner("Loading statistical engine..."):
 # --- SIDEBAR LOGO (SVG) ---
 # --- SIDEBAR LOGO (Version SVG Pro & Stable) ---
 # Couleurs officielles : Bleu (#002D72) et Jaune Néon (#DAFF00)
-
+# --- SIDEBAR LOGO (Official SVG Link) ---
 l1_header_html = """
 <div style="
     background-color: #002D72; 
@@ -77,13 +77,12 @@ l1_header_html = """
     border: 2px solid #DAFF00;
     margin-bottom: 20px;
 ">
-    <svg width="60" height="60" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0 8C0 3.58172 3.58172 0 8 0H32C36.4183 0 40 3.58172 40 8V32C40 36.4183 36.4183 40 32 40H8C3.58172 40 0 36.4183 0 32V8Z" fill="#002D72"/>
-        <path d="M12 10V30H28V26H16V10H12Z" fill="#DAFF00"/>
-        <path d="M22 14V30H26V14H22Z" fill="#DAFF00"/>
-    </svg>
-    <h2 style="color: #DAFF00; font-family: 'Arial Black', sans-serif; margin-top: 10px; margin-bottom: 0px; font-size: 1.4em;">LIGUE 1</h2>
-    <p style="color: #FFFFFF; font-family: Arial, sans-serif; font-size: 0.7em; letter-spacing: 3px; margin-top: 0px; font-weight: bold;">McDONALD'S</p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Logo_Ligue_1_McDonald%27s_2024.svg" 
+         width="120" 
+         style="margin-bottom: 10px;">
+    <p style="color: #DAFF00; font-family: 'Arial Black', sans-serif; font-size: 0.8em; letter-spacing: 2px; margin: 0; font-weight: bold;">
+        OFFICIAL PREDICTOR
+    </p>
 </div>
 """
 
