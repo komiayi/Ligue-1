@@ -3,10 +3,43 @@ import pandas as pd
 import joblib
 import os
 
-# Configuration
+# --- PAGE CONFIGURATION ---
 st.set_page_config(page_title="Ligue 1 Match Predictor", layout="centered")
+# --- LOGO MAPPING FUNCTION ---
+def get_github_logo(team_name):
+    """Fetches the raw image URL from LuukS/foot-logos repository."""
+    base_url = "https://raw.githubusercontent.com/LuukS/foot-logos/main/logos/france_ligue_1/"
+    
+    # Mapping CSV Team Names -> GitHub File Names
+    # Update the left side to match your CSV exactly
+    mapping = {
+        "Paris SG": "paris-saint-germain",
+        "Marseille": "olympique-marseille",
+        "Lyon": "olympique-lyonnais",
+        "Monaco": "as-monaco",
+        "Lille": "lille-osc",
+        "Lens": "rc-lens",
+        "Rennes": "stade-rennais",
+        "Nice": "ogc-nice",
+        "Reims": "stade-reims",
+        "Strasbourg": "rc-strasbourg",
+        "Montpellier": "montpellier-hsc",
+        "Toulouse": "toulouse-fc",
+        "Lorient": "fc-lorient",
+        "Nantes": "fc-nantes",
+        "Le Havre": "le-havre-ac",
+        "Brest": "stade-brestois-29",
+        "Clermont": "clermont-foot-63",
+        "Metz": "fc-metz",
+        "Auxerre": "aj-auxerre",
+        "Angers": "angers-sco",
+        "Saint-Etienne": "as-saint-etienne"
+    }
+    
+    file_name = mapping.get(team_name, team_name.lower().replace(" ", "-"))
+    return f"{base_url}{file_name}.png"
 
-# Chargement
+# --- ASSETS LOADING ---
 @st.cache_resource
 def load_assets():
   # Paths adjusted for your GitHub structure
@@ -24,9 +57,9 @@ def load_assets():
 model, df_stats = load_assets()
 
 # --- SIDEBAR - PROJECT INFO ---
-st.sidebar.title("Project Info")
+st.sidebar.title("Model insights")
 st.sidebar.markdown("""
-This AI model predicts French **Ligue 1** match outcomes based on:
+This model predicts French **Ligue 1** match outcomes based on:
 * Expected Goals (xG)
 * Conversion Rates
 * Historical Team Performance
@@ -43,16 +76,17 @@ except:
 
 # --- MAIN INTERFACE ---
 st.title("Ligue 1 Match Analyzer")
-st.markdown("---")
+st.markdown("Enter match details below to generate AI-powered probabilities.")
 
 # # INPUT FORM
-with st.form(key='mon_formulaire1'):
+with st.form(key='match_form'):
     st.subheader("Match configuration")
     col1, col2 = st.columns(2)
     teams = sorted(df_stats['Team'].unique())
   
     with col1:
         home_team = st.selectbox("🏠 Home team", options=teams, key='h_team')
+        st.image(get_github_logo(home_team), width=80)
         odd_h = st.number_input(label = "Home win odds", value = 2.00, step=0.05, format="%.2f")
       
     with col2:
