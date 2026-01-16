@@ -9,8 +9,8 @@ st.set_page_config(page_title="Ligue 1 Predictor", layout="centered")
 # Chargement
 @st.cache_resource
 def load_assets():
-  model_path = os.path.join(models, 'football_model.pkl')
-  stats_path = os.path.join(data, 'latest_team_stats.csv')
+  model_path = os.path.join('models', 'football_model.pkl')
+  stats_path = os.path.join('data', 'latest_team_stats.csv')
 
   # Vérification de l'existence des fichiers
   if not os.path.exists(model_path) or not os.path.exists(stats_path):
