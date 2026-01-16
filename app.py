@@ -10,6 +10,24 @@ st.set_page_config(
     page_icon="⚽",
     layout="centered"
 )
+
+st.markdown("""
+    <style>
+    /* Force la couleur du texte des probabilités pour être lisible partout */
+    .stMarkdown p, .stCaption p {
+        color: inherit;
+    }
+    /* Style spécifique pour tes badges de pourcentages */
+    .prediction-text {
+        font-weight: bold;
+        color: #FFFFFF; /* On force en blanc */
+        background-color: rgba(255, 255, 255, 0.1); /* Petit fond translucide */
+        padding: 2px 8px;
+        border-radius: 5px;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
 # --- LOGO MAPPING FUNCTION ---
 def get_github_logo(team_name):
     """Fetches the raw image URL from luukhopman/foot-logos repository."""
