@@ -83,9 +83,15 @@ col1, col2 = st.columns(2)
 teams = sorted(df_stats['Team'].unique())
 
 with col1:
-    home_team = st.selectbox("🏠 Home team", options=teams, key='h_team')
-    st.image(get_github_logo(home_team), width=100)
-    #odd_h = st.number_input(label = "Home win odds", value = 2.00, step=0.05, format="%.2f")
+    logo_home = get_github_logo(home_team)
+    st.markdown(f"""
+        <div style="text-align: center;">
+            <img src="{logo_home}" width="100">
+            <p style="font-size: 20px; font-weight: bold; margin-top: 10px;">{home_team}</p>
+        </div>
+    """, unsafe_allow_html=True)
+    
+    home_team = st.selectbox("🏠 Home team", options=teams, key='h_team', label_visibility="collapsed")
   
 with col2:
     away_team = st.selectbox("✈️ Away team", options=teams, key='a_team')
