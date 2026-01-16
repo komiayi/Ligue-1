@@ -157,7 +157,7 @@ if submit_button:
             st.divider()
 
             res_h, res_n, res_a = st.columns(3)
-
+            st.markdown("<h3 style='text-align: center;'>Prediction Results</h3>", unsafe_allow_html=True)
             # Using Metrics for a professional dashboard look
             res_h.metric(label=f"{home_team}", value=f"{probs[0]*100:.1f}%")
             res_n.metric(label="Draw", value=f"{probs[1]*100:.1f}%")
