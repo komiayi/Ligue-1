@@ -157,7 +157,7 @@ if submit_button:
                     <style>
                         .result-card {
                             background-color: #f8f9fa;
-                            border-radius: 15px;
+                            border-radius: 5px;
                             padding: 20px;
                             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
                             text-align: center;
@@ -184,7 +184,7 @@ if submit_button:
                     <div class="prob-bar-container">
                         <div style="width: {p_h}%; background: linear-gradient(90deg, #2e7d32, #4caf50); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);"></div>
                         <div style="width: {p_d}%; background: linear-gradient(90deg, #616161, #9e9e9e); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);"></div>
-                        <div style="width: {p_a}%; background: linear-gradient(90deg, #c62828, #f44336); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">%</div>
+                        <div style="width: {p_a}%; background: linear-gradient(90deg, #c62828, #f44336); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);"></div>
                     </div>
                 """, unsafe_allow_html=True)
 
