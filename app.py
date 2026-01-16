@@ -294,9 +294,9 @@ with foot_col1:
     st.caption("Interface by **Streamlit**")
 
 with foot_col2:
-    st.markdown("##### Data Status")
-    st.caption("Sources: Official Ligue 1 Statistics")
-    st.caption("Last Update: Weekly Sync")
+    st.markdown("##### Data status")
+    st.caption("Sources: Official Ligue 1 statistics")
+    st.caption("Last update: weekly sync")
 
 # Disclaimer discret et centré
 st.markdown(
