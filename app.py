@@ -94,8 +94,13 @@ with col1:
     
 with col2:
     away_team = st.selectbox("✈️ Away team", options=teams, key='a_team')
-    st.image(get_github_logo(away_team), width=100)
-    #odd_a = st.number_input(label = "Away win odds", value = 3.00, step=0.05, format="%.2f")
+    logo_away = get_github_logo(away_team)
+    st.markdown(f"""
+        <div style="text-align: center;">
+            <img src="{logo_home}" width="100">
+            <p style="font-size: 20px; font-weight: bold; margin-top: 10px;">{away_team}</p>
+        </div>
+    """, unsafe_allow_html=True)
 
 # # INPUT FORM
 with st.form(key='match_form'):
