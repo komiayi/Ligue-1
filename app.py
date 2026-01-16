@@ -64,6 +64,20 @@ with st.spinner("Loading statistical engine..."):
     model, df_stats = load_assets()
 
 # --- 4. SIDEBAR (More visual) ---
+# --- SIDEBAR LOGO (SVG) ---
+l1_svg = """
+<center>
+    <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="100" height="100" rx="20" fill="#002D72"/>
+        <path d="M35 25V75H45V35H65V25H35Z" fill="#DAFF00"/>
+        <path d="M55 45V75H65V45H55Z" fill="#DAFF00"/>
+    </svg>
+    <h3 style="color: #DAFF00; font-family: sans-serif; margin-top: 10px; font-size: 1.2em;">Ligue 1</h3>
+    <p style="color: white; font-size: 0.7em; letter-spacing: 2px; margin-top: -15px;">McDONALD'S</p>
+</center>
+"""
+st.sidebar.markdown(l1_svg, unsafe_allow_html=True)
+st.sidebar.markdown("<br>", unsafe_allow_html=True)
 st.sidebar.image("https://upload.wikimedia.org/wikipedia/fr/thumb/f/fe/Logo_Ligue_1_McDonald%27s_2024.png/200px-Logo_Ligue_1_McDonald%27s_2024.png", width=100)
 #st.sidebar.image("https://upload.wikimedia.org/wikipedia/commons/4/49/Ligue1_logo_2024.png", width=100) # Official L1 Logo
 st.sidebar.title("Model Insights")
