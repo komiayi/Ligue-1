@@ -91,8 +91,8 @@ l1_header_html = """
 
 st.sidebar.markdown(l1_header_html, unsafe_allow_html=True)
 
-st.sidebar.title("Model insights")
 st.sidebar.divider()
+st.sidebar.title("Model insights")
 st.sidebar.markdown("""
 This predictor uses a **Scikit-Learn** pipeline to analyze:
 * **xG Metrics**
