@@ -119,8 +119,7 @@ st.markdown("""
     """, 
     unsafe_allow_html=True
 )
-st.markdown("---")
-st.divider()
+st.markdown(" ")
 
 col1, col_vs, col2 = st.columns([4, 2, 4])
 mapping_clubs_2026 = [
