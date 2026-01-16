@@ -113,7 +113,7 @@ except:
 st.title("Match Predictor")
 st.markdown("""
     <p style='font-size: 1.1em; color: gray;'>
-    Statistical analysis & predictions based on my <b>Scikit-Learn</b> model.
+    Statistical analysis & predictions based <b>Scikit-Learn</b> model.
     <br>Season 2025-2026
     </p>
     """, 
