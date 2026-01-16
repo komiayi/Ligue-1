@@ -157,7 +157,7 @@ if submit_button:
                     <style>
                         .result-card {
                             background-color: #f8f9fa;
-                            border-radius: 15px;
+                            border-radius: 5px;
                             padding: 20px;
                             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
                             text-align: center;
