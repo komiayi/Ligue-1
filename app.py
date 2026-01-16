@@ -240,12 +240,12 @@ st.divider()
 foot_col1, foot_col2 = st.columns(2)
 
 with foot_col1:
-    st.markdown("##### 🛠️ Technology")
+    st.markdown("##### Technology")
     st.caption("Developed with **Python** & **Scikit-Learn**")
     st.caption("Interface by **Streamlit**")
 
 with foot_col2:
-    st.markdown("##### 📅 Data Status")
+    st.markdown("##### Data Status")
     st.caption("Sources: Official Ligue 1 Statistics")
     st.caption("Last Update: Weekly Sync")
 
