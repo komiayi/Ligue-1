@@ -97,7 +97,7 @@ with col2:
     logo_away = get_github_logo(away_team)
     st.markdown(f"""
         <div style="text-align: center;">
-            <img src="{logo_home}" width="100">
+            <img src="{logo_away}" width="100">
             <p style="font-size: 20px; font-weight: bold; margin-top: 10px;">{away_team}</p>
         </div>
     """, unsafe_allow_html=True)
