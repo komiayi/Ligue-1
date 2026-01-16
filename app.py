@@ -115,7 +115,8 @@ with col2:
 
 # --- INPUT FORM ---
 with st.form(key='match_form'):
-    st.subheader("Match configuration")
+    #st.subheader("Match configuration")
+    st.markdown("<h3 style='text-align: center;'>Match configuration</h3>", unsafe_allow_html=True)
     c1, c2, c3 = st.columns(3)
     
     with c1:
@@ -151,8 +152,8 @@ if submit_button:
             probs = model.predict_proba(input_data)[0]
 
             # RESULTS DISPLAY
-            st.divider()
-            st.markdown("<h3 style='text-align: left;'>Prediction Results</h3>", unsafe_allow_html=True)
+            #st.divider()
+            st.markdown("<h3 style='text-align: center;'>Prediction results</h3>", unsafe_allow_html=True)
             
             res_h, res_n, res_a = st.columns(3)
             
