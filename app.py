@@ -65,24 +65,22 @@ with st.spinner("Loading statistical engine..."):
 
 # --- 4. SIDEBAR (More visual) ---
 # --- SIDEBAR LOGO (SVG) ---
-# --- SIDEBAR LOGO (Version SVG Pro & Stable) ---
-# Couleurs officielles : Bleu (#002D72) et Jaune Néon (#DAFF00)
-# --- SIDEBAR LOGO (Official SVG Link) ---
+
 l1_header_html = """
 <div style="
-    background-color: #002D72; 
+    background-color: #87CEEB; 
     padding: 20px; 
     border-radius: 15px; 
     text-align: center; 
-    border: 2px solid #DAFF00;
+    border: 2px solid #FFFFFF;
     margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 ">
     <img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Logo_Ligue_1_McDonald%27s_2024.svg" 
-         width="120" 
-         style="margin-bottom: 10px;">
-    <p style="color: #DAFF00; font-family: 'Arial Black', sans-serif; font-size: 0.8em; letter-spacing: 2px; margin: 0; font-weight: bold;">
-        OFFICIAL PREDICTOR
-    </p>
+         width="100" 
+         style="filter: brightness(0) invert(1); margin-bottom: 10px;">
+    <h2 style="color: #FFFFFF; font-family: 'Arial Black', sans-serif; margin: 0; font-size: 1.4em;">LIGUE 1</h2>
+    <p style="color: #FFFFFF; font-family: Arial, sans-serif; font-size: 0.7em; letter-spacing: 2px; margin: 0; opacity: 0.9;">McDONALD'S</p>
 </div>
 """
 
