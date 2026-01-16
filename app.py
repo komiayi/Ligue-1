@@ -111,9 +111,9 @@ with col2:
         </div>
     """, unsafe_allow_html=True)
     
-st.markdown("---")
+#st.markdown("---")
 
-# # INPUT FORM
+# --- INPUT FORM ---
 with st.form(key='match_form'):
     st.subheader("Match configuration")
     c1, c2, c3 = st.columns(3)
@@ -152,7 +152,7 @@ if submit_button:
 
             # RESULTS DISPLAY
             st.divider()
-            st.markdown("<h3 style='text-align: center;'>Prediction Results</h3>", unsafe_allow_html=True)
+            st.markdown("<h3 style='text-align: left;'>Prediction Results</h3>", unsafe_allow_html=True)
             
             res_h, res_n, res_a = st.columns(3)
             
