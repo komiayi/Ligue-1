@@ -36,8 +36,11 @@ def get_github_logo(team_name):
     "St Etienne": "AS Saint-Étienne",
     "Paris FC": "Paris FC"
 }
-    
+    nom_fichier = mapping.get(team_name, team_name)
+
     file_name = mapping.get(team_name, team_name)
+    nom_fichier_url = file_name.replace(" ", "%20")
+    url_finale = f"{base_url}{nom_fichier_url}.png"
     return f"{base_url}{file_name}.png"
 
 # --- ASSETS LOADING ---
