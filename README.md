@@ -1,6 +1,6 @@
 # Ligue 1 match predictor (Season 2025-2026)
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://ligue-1-predictor.streamlit.app/)
+**[![Launch the Live Application](https://img.shields.io/badge/Streamlit-Launch%20the%20Live%20Application-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://ligue-1-predictor.streamlit.app/)**
 
 ## Project description
 This repository contains a professional-grade statistical forecasting engine for the French Ligue 1. The goal of this project is to apply machine learning principles to sports data to provide actionable match insights.
