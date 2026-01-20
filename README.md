@@ -3,7 +3,7 @@
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://ligue-1-predictor.streamlit.app/)
 
 ## Project description
-This repository contains a professional-grade statistical forecasting engine for the French Ligue 1. The goal of this project is to apply machine learning* principles to sports data to provide actionable match insights.
+This repository contains a professional-grade statistical forecasting engine for the French Ligue 1. The goal of this project is to apply machine learning principles to sports data to provide actionable match insights.
 
 ##  Methodology
 The predictive engine utilizes a logistic regression model from the `scikit-learn` library. 
