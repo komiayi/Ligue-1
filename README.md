@@ -21,6 +21,8 @@ The predictive engine utilizes a **Logistic Regression** model from the `scikit-
    ```bash
    git clone [https://github.com/komiayi/Ligue-1.git](https://github.com/komiayi/Ligue-1.git)
 2. Install dependencies:
+   ```bash
    pip install -r requirements.txt
-3. Run the app:
+4. Run the app:
+   ```bash
    streamlit run app.py
