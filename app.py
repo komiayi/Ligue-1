@@ -7,6 +7,7 @@ import datetime
 # --- PAGE CONFIGURATION ---
 st.set_page_config(
     page_title="Ligue 1 Match predictor",
+    page_icon="⚽",
     layout="centered"
 )
 
