@@ -10,6 +10,7 @@ st.set_page_config(
     page_icon="⚽",
     layout="centered"
 )
+st.image("ton_image_banniere.jpg", use_container_width=True)
 
 # --- LOGO MAPPING FUNCTION ---
 def get_github_logo(team_name):
