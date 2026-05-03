@@ -1,28 +1,123 @@
-# Ligue 1 match predictor (Season 2025-2026)
+# Ligue 1 Match Predictor — 2025–2026 Season
 
-**[![Launch the Live Application](https://img.shields.io/badge/Streamlit-Launch%20the%20Live%20Application-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://ligue-1-predictor.streamlit.app/)**
+> A statistical forecasting engine that estimates win, draw, and loss probabilities for matches of the French Ligue 1, built with multinomial logistic regression and deployed as an interactive Streamlit application.
 
-## Project description
-This repository contains a professional-grade statistical forecasting engine for the French Ligue 1. The goal of this project is to apply machine learning principles to sports data to provide actionable match insights.
+[![Try the live app](https://img.shields.io/badge/Streamlit-Try%20the%20live%20app-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://ligue-1-predictor.streamlit.app/)
+
+[![Status](https://img.shields.io/badge/status-active-brightgreen)](https://github.com/komiayi/Ligue-1)
+[![Python](https://img.shields.io/badge/Python-3.12-blue?logo=python&logoColor=white)](https://www.python.org/)
+[![scikit-learn](https://img.shields.io/badge/scikit--learn-orange?logo=scikit-learn&logoColor=white)](https://scikit-learn.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+![Last commit](https://img.shields.io/github/last-commit/komiayi/Ligue-1)
+
+
+  Once a screenshot of the application interface is available,
+  uncomment the line below and place the file at figures/screenshot.png
+
+<!-- ![Ligue 1 Match Predictor — application interface](figures/screenshot.png) -->
+
+---
+
+##  Overview
+
+This project provides a **probabilistic match outcome forecaster** for the French Ligue 1 (2025–2026 season). It applies multinomial logistic regression to a curated set of team-level performance indicators in order to estimate, for any given fixture, the probabilities of a home win, a draw, and an away win.
+
+The forecasting engine is exposed through a **Streamlit web application** with a clean light/dark interface, allowing users to select a fixture and obtain calibrated outcome probabilities in real time.
+
+>  **Disclaimer.** This project is intended strictly for **educational and demonstrative purposes**. The probabilities produced by the model do not constitute betting advice, financial recommendations, or any form of professional forecasting service.
+
+---
+
+##  Live application
+
+The application is deployed on Streamlit Community Cloud:
+
+> **[ligue-1-predictor.streamlit.app](https://ligue-1-predictor.streamlit.app/)**
+
+If the application appears to be sleeping (Streamlit suspends inactive apps after a period of inactivity), simply click the wake-up button on the landing page and allow a few seconds for the container to restart.
+
+---
 
 ##  Methodology
-The predictive engine utilizes a logistic regression model from the `scikit-learn` library. 
-* *Classification.* Unlike linear models, this approach is optimized for categorical outcomes (Home Win, Draw, Away Win).
-* *Probabilistic Output.* The model uses the `predict_proba` function to generate a nuanced probability distribution, allowing for a better assessment of match volatility.
-* *Feature Set.* Data includes goals scored/conceded, team strength index, and historical performance normalized for the 18-club 2025-2026 format.
 
-##  Tech Stack
-- *Language.* Python 3.12
-- *Data Science.* Pandas, Scikit-Learn, NumPy
-- *Frontend.* Streamlit
+The predictive engine relies on a **multinomial logistic regression** model from `scikit-learn`, selected for its interpretability, its native support for multi-class outputs, and its ability to produce calibrated probabilities through `predict_proba`.
 
-##  Installation and usage
-1. Clone the repository:
-   ```bash
-   git clone [https://github.com/komiayi/Ligue-1.git](https://github.com/komiayi/Ligue-1.git)
-2. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-4. Run the app:
-   ```bash
-   streamlit run app.py
+- **Outcome variable.** Match result encoded as one of three mutually exclusive classes: home win, draw, away win.
+- **Feature set.** Team-level indicators including goals scored and conceded, a relative team strength index, and historical performance metrics, all normalized to the 18-club Ligue 1 format of the 2025–2026 season.
+- **Probabilistic output.** Rather than a single hard prediction, the model returns a probability distribution over the three classes, providing a richer representation of match volatility and uncertainty than deterministic forecasts would.
+
+---
+
+##  Technology stack
+
+| Component         | Technology                          |
+| ----------------- | ----------------------------------- |
+| Core language     | Python 3.12                         |
+| Modeling          | scikit-learn                        |
+| Data handling     | pandas, NumPy                       |
+| Web interface     | Streamlit (custom light/dark theme) |
+| Development env.  | VS Code Dev Containers              |
+| Version control   | Git / GitHub                        |
+
+---
+
+##  Repository structure
+
+```
+Ligue-1/
+├── .devcontainer/    # VS Code Dev Container configuration
+├── data/             # Match data and team-level features
+├── figures/          # Static visualizations and screenshots
+├── models/           # Serialized trained models
+├── scripts/          # Data preparation and training scripts
+├── app.py            # Streamlit application entry point
+├── requirements.txt  # Python dependencies
+└── README.md
+```
+
+---
+
+##  Installation and local usage
+
+**1. Clone the repository:**
+
+```bash
+git clone https://github.com/komiayi/Ligue-1.git
+cd Ligue-1
+```
+
+**2. Install Python dependencies** (Python 3.12 recommended):
+
+```bash
+pip install -r requirements.txt
+```
+
+**3. Launch the Streamlit application:**
+
+```bash
+streamlit run app.py
+```
+
+The application will open automatically in your default browser at `http://localhost:8501`.
+
+---
+
+##  Contributing
+
+Suggestions, methodological feedback, and bug reports are welcome through the [Issues](https://github.com/komiayi/Ligue-1/issues) tab. For substantial contributions, please open an issue first to discuss the proposed changes.
+
+---
+
+## 📝 License
+
+Distributed under the MIT License. See [`LICENSE`](LICENSE) for full terms.
+
+---
+
+##  Author
+
+**Komi Roger Ayi**
+Biostatistician — Health Data Analyst
+Montréal, Québec, Canada
+
+[Portfolio](https://komiayi.github.io) · [LinkedIn](https://www.linkedin.com/in/komi-ayi) · [GitHub](https://github.com/komiayi)
