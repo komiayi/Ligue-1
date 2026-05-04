@@ -93,7 +93,7 @@ Ligue-1/
 
 ---
 
-## ⚙️ Installation and local usage
+## Installation and local usage
 
 **1. Clone the repository:**
 
