@@ -10,15 +10,15 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 ![Last commit](https://img.shields.io/github/last-commit/komiayi/Ligue-1)
 
-
+<!--
   Once a screenshot of the application interface is available,
   uncomment the line below and place the file at figures/screenshot.png
-
+-->
 <!-- ![Ligue 1 Match Predictor — application interface](figures/screenshot.png) -->
 
 ---
 
-##  Overview
+## Overview
 
 This project provides a **probabilistic match outcome forecaster** for the French Ligue 1 (2025–2026 season). It applies multinomial logistic regression to a curated set of team-level performance indicators in order to estimate, for any given fixture, the probabilities of a home win, a draw, and an away win.
 
@@ -28,7 +28,7 @@ The forecasting engine is exposed through a **Streamlit web application** with a
 
 ---
 
-##  Live application
+## Live application
 
 The application is deployed on Streamlit Community Cloud:
 
@@ -38,7 +38,7 @@ If the application appears to be sleeping (Streamlit suspends inactive apps afte
 
 ---
 
-##  Methodology
+## Methodology
 
 The predictive engine relies on a **multinomial logistic regression** model from `scikit-learn`, selected for its interpretability, its native support for multi-class outputs, and its ability to produce calibrated probabilities through `predict_proba`.
 
@@ -48,7 +48,23 @@ The predictive engine relies on a **multinomial logistic regression** model from
 
 ---
 
-##  Technology stack
+## Data sources
+
+Match-level data is sourced from **[Football-Data.co.uk](https://www.football-data.co.uk/)**, a long-standing public repository of European football statistics widely used in academic research and sports analytics.
+
+The dataset is retrieved programmatically across multiple seasons via the following URL pattern:
+
+```
+https://www.football-data.co.uk/mmz4281/{season}/F1.csv
+```
+
+where `{season}` denotes the season identifier (e.g. `2425` for 2024–2025, `2526` for 2025–2026). Each CSV file provides match-level statistics including final scores, half-time scores, shots, shots on target, fouls, corners, and bookings — from which team-level performance indicators are subsequently engineered.
+
+> **Acknowledgment.** This project relies entirely on data made publicly available by Football-Data.co.uk. The repository does not redistribute the source data; downloads occur at runtime from the original provider.
+
+---
+
+## Technology stack
 
 | Component         | Technology                          |
 | ----------------- | ----------------------------------- |
@@ -61,7 +77,7 @@ The predictive engine relies on a **multinomial logistic regression** model from
 
 ---
 
-##  Repository structure
+## Repository structure
 
 ```
 Ligue-1/
@@ -77,7 +93,7 @@ Ligue-1/
 
 ---
 
-##  Installation and local usage
+## ⚙️ Installation and local usage
 
 **1. Clone the repository:**
 
@@ -102,19 +118,19 @@ The application will open automatically in your default browser at `http://local
 
 ---
 
-##  Contributing
+## Contributing
 
 Suggestions, methodological feedback, and bug reports are welcome through the [Issues](https://github.com/komiayi/Ligue-1/issues) tab. For substantial contributions, please open an issue first to discuss the proposed changes.
 
 ---
 
-## 📝 License
+## License
 
 Distributed under the MIT License. See [`LICENSE`](LICENSE) for full terms.
 
 ---
 
-##  Author
+## Author
 
 **Komi Roger Ayi**
 Biostatistician — Health Data Analyst
