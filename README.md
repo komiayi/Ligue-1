@@ -1,4 +1,4 @@
-# Ligue 1 Match Predictor — 2025–2026 Season
+# Ligue 1 Match Predictor : 2025–2026 Season
 
 > A statistical forecasting engine that estimates win, draw, and loss probabilities for matches of the French Ligue 1, built with multinomial logistic regression and deployed as an interactive Streamlit application.
 
